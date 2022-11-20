@@ -165,7 +165,7 @@ function traerEstudiantePorCarreraCiudad(){
 		let carrera = document.getElementById("carrera").value;
 	let ciudad = document.getElementById("ciudad").value;
 	// let url = "http://localhost:9000/estudiantes/carrera/ciudad/";
-	let url = "https://demo-estudiantes-spring.herokuapp.com/carrera/ciudad/";
+	let url = "https://demo-estudiantes-spring.herokuapp.com/estudiantes/carrera/ciudad/";
 	estudiantePorCarreraPorCiudad(carrera,ciudad,url);
 	
 }
