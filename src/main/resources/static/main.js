@@ -7,7 +7,8 @@ let btnMatricular = document.querySelector("#btnMatricular");
 btnMatricular.addEventListener("click",matricularEstudianteEnCarrera);
 
 function matricularEstudianteEnCarrera(){
-	let url = "http://localhost:9000/estudiante/carrera/";
+	// let url = "http://localhost:9000/estudiante/carrera/";
+	let url = "https://demo-estudiantes-spring.herokuapp.com/estudiante/carrera/";
 	let estudiante = document.getElementById("idEstudiante").value;
 	let carrera = document.getElementById("idCarrera").value;
 		let estudCarr = {
@@ -42,7 +43,8 @@ let btnAlta =document.querySelector("#btnAltaEst");
 btnAlta.addEventListener("click",agregarEstudiante);
 
 function agregarEstudiante(){
-	let url = "http://localhost:9000/estudiantes/alta";
+	// let url = "http://localhost:9000/estudiantes/alta";
+	let url = "https://demo-estudiantes-spring.herokuapp.com/estudiantes/alta";
 	let dni = document.getElementById("dni").value;
 	let nombre = document.getElementById("nombre").value;
 	let apellido = document.getElementById("apellido").value;
@@ -90,7 +92,8 @@ btnLuEstudiante.addEventListener("click",traerEstudiantePorLU);
 
 function traerEstudiantePorLU() {
 	let lu = document.getElementById("LU").value;
-	let url = "http://localhost:9000/estudiantes/lu/";
+	// let url = "http://localhost:9000/estudiantes/lu/";
+	let url = "https://demo-estudiantes-spring.herokuapp.com/estudiantes/lu/";
 	estudiantePorLU(lu,url);
 }
 
@@ -124,7 +127,8 @@ btnGenero.addEventListener("click",traerEstudiantePorGenero);
 
 function traerEstudiantePorGenero(){
 	let genero = document.getElementById("genero").value;
-	let url = "http://localhost:9000/estudiantes/por/genero/";
+	// let url = "http://localhost:9000/estudiantes/por/genero/";
+	let url = "https://demo-estudiantes-spring.herokuapp.com/estudiantes/por/genero/";
 	estudiantePorGenero(genero,url);
 }
  
@@ -159,8 +163,9 @@ btnCarrCiu.addEventListener("click",traerEstudiantePorCarreraCiudad);
 
 function traerEstudiantePorCarreraCiudad(){
 		let carrera = document.getElementById("carrera").value;
-	let ciudad = document.getElementById("ciudad").value;	
-	let url = "http://localhost:9000/estudiantes/carrera/ciudad/";
+	let ciudad = document.getElementById("ciudad").value;
+	// let url = "http://localhost:9000/estudiantes/carrera/ciudad/";
+	let url = "https://demo-estudiantes-spring.herokuapp.com/carrera/ciudad/";
 	estudiantePorCarreraPorCiudad(carrera,ciudad,url);
 	
 }
