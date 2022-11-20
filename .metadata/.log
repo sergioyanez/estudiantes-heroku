@@ -1,0 +1,2072 @@
+!SESSION 2022-11-18 19:00:28.555 -----------------------------------------------
+eclipse.buildId=4.23.0.I20220308-0310
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_AR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.gef.dot.ide 4 0 2022-11-18 19:02:39.847
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.gef.dot.ide [1327]
+  Unresolved requirement: Require-Bundle: org.eclipse.gef.dot; bundle-version="[5.0.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.gef.dot; bundle-version="5.1.3.202203080300"; singleton:="true"
+       org.eclipse.gef.dot [1324]
+         Unresolved requirement: Require-Bundle: org.eclipse.emf.mwe2.launch; bundle-version="[2.10.0,3.0.0)"; resolution:="optional"
+         Unresolved requirement: Require-Bundle: org.eclipse.xtext.generator; bundle-version="[2.17.0,3.0.0)"; resolution:="optional"
+         Unresolved requirement: Require-Bundle: org.eclipse.gef.dot.generator; bundle-version="[5.0.0,6.0.0)"; resolution:="optional"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.gef.dot [osgi.identity; type="osgi.bundle"; version:Version="5.1.3.202203080300"; osgi.identity="org.eclipse.gef.dot"; singleton:="true"] because it is exposed to package 'com.google.inject' from resources com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="5.0.1.v20210324-2015"; osgi.identity="com.google.inject"] and com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="3.0.0.v201605172100"; osgi.identity="com.google.inject"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.gef.dot [osgi.identity; type="osgi.bundle"; version:Version="5.1.3.202203080300"; osgi.identity="org.eclipse.gef.dot"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtext)(&(bundle-version>=2.17.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtext
+  com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="5.0.1.v20210324-2015"; osgi.identity="com.google.inject"]
+
+Chain 2:
+  org.eclipse.gef.dot [osgi.identity; type="osgi.bundle"; version:Version="5.1.3.202203080300"; osgi.identity="org.eclipse.gef.dot"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.gef.common)(&(bundle-version>=5.0.0)(!(bundle-version>=6.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="5.0.1.202203080300"; osgi.wiring.bundle="org.eclipse.gef.common"
+  org.eclipse.gef.common [osgi.identity; type="osgi.bundle"; version:Version="5.0.1.202203080300"; osgi.identity="org.eclipse.gef.common"]
+    import: (&(osgi.wiring.package=com.google.inject)(&(version>=1.3.0)(!(version>=1.4.0))))
+     |
+    export: osgi.wiring.package: com.google.inject
+  com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="3.0.0.v201605172100"; osgi.identity="com.google.inject"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.gef.dot.ui 4 0 2022-11-18 19:02:40.039
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.gef.dot.ui [1328]
+  Unresolved requirement: Require-Bundle: org.eclipse.gef.dot; bundle-version="[5.0.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.gef.dot; bundle-version="5.1.3.202203080300"; singleton:="true"
+       org.eclipse.gef.dot [1324]
+         Unresolved requirement: Require-Bundle: org.eclipse.emf.mwe2.launch; bundle-version="[2.10.0,3.0.0)"; resolution:="optional"
+         Unresolved requirement: Require-Bundle: org.eclipse.xtext.generator; bundle-version="[2.17.0,3.0.0)"; resolution:="optional"
+         Unresolved requirement: Require-Bundle: org.eclipse.gef.dot.generator; bundle-version="[5.0.0,6.0.0)"; resolution:="optional"
+  Unresolved requirement: Require-Bundle: org.eclipse.gef.dot.ide; bundle-version="[5.0.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.gef.dot.ide; bundle-version="5.1.3.202203080300"; singleton:="true"
+       org.eclipse.gef.dot.ide [1327]
+         Unresolved requirement: Require-Bundle: org.eclipse.gef.dot; bundle-version="[5.0.0,6.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.gef.dot; bundle-version="5.1.3.202203080300"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.gef.dot.ui [osgi.identity; type="osgi.bundle"; version:Version="5.1.3.202203080300"; osgi.identity="org.eclipse.gef.dot.ui"; singleton:="true"] because it is exposed to package 'com.google.inject' from resources com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="5.0.1.v20210324-2015"; osgi.identity="com.google.inject"] and com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="3.0.0.v201605172100"; osgi.identity="com.google.inject"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.gef.dot.ui [osgi.identity; type="osgi.bundle"; version:Version="5.1.3.202203080300"; osgi.identity="org.eclipse.gef.dot.ui"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtext.ui)(&(bundle-version>=2.17.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtext.ui
+  com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="5.0.1.v20210324-2015"; osgi.identity="com.google.inject"]
+
+Chain 2:
+  org.eclipse.gef.dot.ui [osgi.identity; type="osgi.bundle"; version:Version="5.1.3.202203080300"; osgi.identity="org.eclipse.gef.dot.ui"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.gef.common)(&(bundle-version>=5.0.0)(!(bundle-version>=6.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="5.0.1.202203080300"; osgi.wiring.bundle="org.eclipse.gef.common"
+  org.eclipse.gef.common [osgi.identity; type="osgi.bundle"; version:Version="5.0.1.202203080300"; osgi.identity="org.eclipse.gef.common"]
+    import: (&(osgi.wiring.package=com.google.inject)(&(version>=1.3.0)(!(version>=1.4.0))))
+     |
+    export: osgi.wiring.package: com.google.inject
+  com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="3.0.0.v201605172100"; osgi.identity="com.google.inject"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.app 4 0 2022-11-18 19:02:40.156
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.app [1499]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.core [1514]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.ui [1525]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui.rcp; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui.rcp; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.ui.rcp [1526]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.archive; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.archive; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.archive [1511]
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.app.dbtool 4 0 2022-11-18 19:02:40.271
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.app.dbtool [1502]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.core [1514]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.cmd; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.cmd; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.cmd [1513]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.archive; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.archive; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.archive [1511]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.app.testexec 4 0 2022-11-18 19:02:40.467
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.app.testexec [1503]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.cmd; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.cmd; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.cmd [1513]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.core [1514]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.client.api.ui 4 0 2022-11-18 19:02:40.551
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.client.api.ui [1510]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.core [1514]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui.rcp; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui.rcp; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.ui.rcp [1526]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.ui [1525]
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.archive; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.archive; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.archive [1511]
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.client.autagent 4 0 2022-11-18 19:02:40.634
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.client.autagent [1512]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.ui [1525]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.core [1514]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui.rcp; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui.rcp; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.ui.rcp [1526]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.archive; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.archive; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.archive [1511]
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.client.core 4 0 2022-11-18 19:02:40.695
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.client.core [1514]
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.client.core.exporter.junit 4 0 2022-11-18 19:02:40.750
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.client.core.exporter.junit [1515]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.core [1514]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.ui [1525]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.client.core.functions 4 0 2022-11-18 19:02:40.795
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.client.core.functions [1516]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.core [1514]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.client.inspector.ui 4 0 2022-11-18 19:02:40.859
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.client.inspector.ui [1517]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui.rcp; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui.rcp; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.ui.rcp [1526]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.ui [1525]
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+                     org.eclipse.jubula.client.core [1514]
+                       No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.archive; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.archive; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.archive [1511]
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.client.teststyle.impl.standard 4 0 2022-11-18 19:02:40.932
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.client.teststyle.impl.standard [1520]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui.rcp; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui.rcp; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.ui.rcp [1526]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.ui [1525]
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+                     org.eclipse.jubula.client.core [1514]
+                       No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.archive; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.archive; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.archive [1511]
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.teststyle; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.teststyle; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.teststyle [1519]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui.rcp; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.ui.rcp; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.client.toolkit.ui 4 0 2022-11-18 19:02:40.999
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.client.toolkit.ui [1521]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.core [1514]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.ui [1525]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui.rcp; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui.rcp; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.ui.rcp [1526]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.archive; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.archive; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.archive [1511]
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.client.ui 4 0 2022-11-18 19:02:41.045
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.client.ui [1525]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.core [1514]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.client.ui.rcp 4 0 2022-11-18 19:02:41.103
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.client.ui.rcp [1526]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.ui [1525]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.core [1514]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.archive; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.archive; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.archive [1511]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.ui.rcp [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.ui.rcp"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.ui.rcp [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.ui.rcp"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.ui.rcp [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.ui.rcp"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.client.wiki.ui 4 0 2022-11-18 19:02:41.230
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.client.wiki.ui [1527]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.core [1514]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.ui [1525]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui.rcp; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui.rcp; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.ui.rcp [1526]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.archive; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.archive; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.archive [1511]
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.launch 4 0 2022-11-18 19:02:41.298
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.launch [1529]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.autagent; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.autagent; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.autagent [1512]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.ui [1525]
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+                     org.eclipse.jubula.client.core [1514]
+                       No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui.rcp; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.ui.rcp; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.ui.rcp [1526]
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.archive; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.archive; bundle-version="8.0.3.202004150708"; singleton:="true"
+                     org.eclipse.jubula.client.archive [1511]
+                       Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.launch.java 4 0 2022-11-18 19:02:41.354
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.launch.java [1530]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.launch; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.launch; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.launch [1529]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.autagent; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.autagent; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.autagent [1512]
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+                     org.eclipse.jubula.client.ui [1525]
+                       Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+                            org.eclipse.jubula.client.core [1514]
+                              No resolution report for the bundle.                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui.rcp; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.ui.rcp; bundle-version="8.0.3.202004150708"; singleton:="true"
+                     org.eclipse.jubula.client.ui.rcp [1526]
+                       Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.archive; bundle-version="[8.0.0,9.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jubula.client.archive; bundle-version="8.0.3.202004150708"; singleton:="true"
+                            org.eclipse.jubula.client.archive [1511]
+                              Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.launch.java.ui 4 0 2022-11-18 19:02:41.422
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.launch.java.ui [1531]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.launch.java; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.launch.java; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.launch.java [1530]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.launch; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.launch; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.launch [1529]
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.autagent; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.autagent; bundle-version="8.0.3.202004150708"; singleton:="true"
+                     org.eclipse.jubula.client.autagent [1512]
+                       Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+                            org.eclipse.jubula.client.ui [1525]
+                              Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+                                   org.eclipse.jubula.client.core [1514]
+                                     No resolution report for the bundle.                       Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui.rcp; bundle-version="[8.0.0,9.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jubula.client.ui.rcp; bundle-version="8.0.3.202004150708"; singleton:="true"
+                            org.eclipse.jubula.client.ui.rcp [1526]
+                              Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.archive; bundle-version="[8.0.0,9.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.jubula.client.archive; bundle-version="8.0.3.202004150708"; singleton:="true"
+                                   org.eclipse.jubula.client.archive [1511]
+                                     Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                                       -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.launch.ui; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.launch.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.launch.ui [1533]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.launch; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.launch; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.launch.rcp.ui 4 0 2022-11-18 19:02:41.514
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.launch.rcp.ui [1532]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.launch; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.launch; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.launch [1529]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.autagent; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.autagent; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.autagent [1512]
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+                     org.eclipse.jubula.client.ui [1525]
+                       Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+                            org.eclipse.jubula.client.core [1514]
+                              No resolution report for the bundle.                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui.rcp; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.ui.rcp; bundle-version="8.0.3.202004150708"; singleton:="true"
+                     org.eclipse.jubula.client.ui.rcp [1526]
+                       Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.archive; bundle-version="[8.0.0,9.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jubula.client.archive; bundle-version="8.0.3.202004150708"; singleton:="true"
+                            org.eclipse.jubula.client.archive [1511]
+                              Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui.rcp; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui.rcp; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.launch.ui; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.launch.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.launch.ui [1533]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.launch; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.launch; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.launch.ui 4 0 2022-11-18 19:02:41.577
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.launch.ui [1533]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.launch; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.launch; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.launch [1529]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.autagent; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.autagent; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.autagent [1512]
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+                     org.eclipse.jubula.client.ui [1525]
+                       Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+                            org.eclipse.jubula.client.core [1514]
+                              No resolution report for the bundle.                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui.rcp; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.ui.rcp; bundle-version="8.0.3.202004150708"; singleton:="true"
+                     org.eclipse.jubula.client.ui.rcp [1526]
+                       Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.archive; bundle-version="[8.0.0,9.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jubula.client.archive; bundle-version="8.0.3.202004150708"; singleton:="true"
+                            org.eclipse.jubula.client.archive [1511]
+                              Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1781)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jubula.client.teststyle 4 0 2022-11-18 19:02:41.914
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jubula.client.teststyle [1519]
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.ui [1525]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.core [1514]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui.rcp; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.ui.rcp; bundle-version="8.0.3.202004150708"; singleton:="true"
+       org.eclipse.jubula.client.ui.rcp [1526]
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.ui; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.ui; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.archive; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.archive; bundle-version="8.0.3.202004150708"; singleton:="true"
+              org.eclipse.jubula.client.archive [1511]
+                Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jubula.client.core; bundle-version="[8.0.0,9.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.jubula.client.core; bundle-version="8.0.3.202004150708"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(&(bundle-version>=2.2.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.jubula.client.core [osgi.identity; type="osgi.bundle"; version:Version="8.0.3.202004150708"; osgi.identity="org.eclipse.jubula.client.core"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.dom4j)(&(bundle-version>=1.6.1)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.6.1.v20190321-1528"; osgi.wiring.bundle="org.dom4j"
+  org.dom4j [osgi.identity; type="osgi.bundle"; version:Version="1.6.1.v20190321-1528"; osgi.identity="org.dom4j"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.2.0)(!(version>=3.0.0))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1847)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1840)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1745)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1667)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.ui 2 0 2022-11-18 19:06:39.818
+!MESSAGE Warnings while parsing the key bindings from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.bindings' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-11-18 19:06:39.818
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-11-18 19:06:39.819
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-11-18 19:06:39.819
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-11-18 19:06:39.819
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-11-18 19:06:39.819
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
+!SUBENTRY 1 org.eclipse.ui 2 0 2022-11-18 19:06:39.819
+!MESSAGE Cannot bind to an undefined command: plug-in='com.github.intellijideakeymap4eclipse.plugin', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
+
+!ENTRY org.eclipse.jface 2 0 2022-11-18 19:06:45.562
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-11-18 19:06:45.562
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@28ba90c1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@71cf6e8c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-11-18 19:06:45.562
+!MESSAGE A conflict occurred for ALT+SHIFT+X S:
+Binding(ALT+SHIFT+X S,
+	ParameterizedCommand(Command(org.eclipse.reddeer.eclipse.ui.junitShortcut.run,RedDeer Test,
+		RedDeer Test,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7545cb17,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X S,
+	ParameterizedCommand(Command(org.eclipse.swtbot.eclipse.ui.junitShortcut.run,SWTBot Test,
+		SWTBot Test,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@635b3ec7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-11-18 19:06:45.563
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1f9b86f5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@15aa3084,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-11-18 19:06:45.563
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4e6c4c55,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@74fbee59,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-11-18 19:06:45.563
+!MESSAGE A conflict occurred for ALT+SHIFT+D S:
+Binding(ALT+SHIFT+D S,
+	ParameterizedCommand(Command(org.eclipse.reddeer.eclipse.ui.junitShortcut.debug,RedDeer Test,
+		RedDeer Test,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3794621d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D S,
+	ParameterizedCommand(Command(org.eclipse.swtbot.eclipse.ui.junitShortcut.debug,SWTBot Test,
+		SWTBot Test,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@737e4a7b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.pde.core 4 0 2022-11-18 19:07:08.399
+!MESSAGE ConfigurationParser.parse() error:
+!STACK 0
+org.xml.sax.SAXException: NLS missing message: InstalledSiteParser_UnableToCreateURL in: org.eclipse.update.internal.configurator.messages
+java.net.MalformedURLException: no protocol: ../../../.p2/pool/
+	at org.eclipse.pde.internal.core.update.configurator.ConfigurationParser.startElement(ConfigurationParser.java:130)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:518)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:374)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2725)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:541)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:888)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:824)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:635)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:324)
+	at org.eclipse.pde.internal.core.update.configurator.ConfigurationParser.parse(ConfigurationParser.java:85)
+	at org.eclipse.pde.internal.core.update.configurator.PlatformConfiguration.loadConfig(PlatformConfiguration.java:110)
+	at org.eclipse.pde.internal.core.update.configurator.PlatformConfiguration.initialize(PlatformConfiguration.java:85)
+	at org.eclipse.pde.internal.core.update.configurator.PlatformConfiguration.<init>(PlatformConfiguration.java:61)
+	at org.eclipse.pde.internal.core.PluginPathFinder.getFeaturePaths(PluginPathFinder.java:115)
+	at org.eclipse.pde.internal.core.ExternalFeatureModelManager.createFeatures(ExternalFeatureModelManager.java:198)
+	at org.eclipse.pde.internal.core.target.TargetDefinition.resolveFeatures(TargetDefinition.java:1060)
+	at org.eclipse.pde.internal.core.target.ProfileBundleContainer.resolveFeatures(ProfileBundleContainer.java:249)
+	at org.eclipse.pde.internal.core.target.AbstractBundleContainer.resolve(AbstractBundleContainer.java:97)
+	at org.eclipse.pde.internal.core.target.TargetDefinition.resolve(TargetDefinition.java:424)
+	at org.eclipse.pde.internal.core.TargetPlatformHelper.getWorkspaceTargetResolved(TargetPlatformHelper.java:630)
+	at org.eclipse.pde.internal.core.PluginModelManager.getExternalBundles(PluginModelManager.java:668)
+	at org.eclipse.pde.internal.core.PluginModelManager.initializeTable(PluginModelManager.java:591)
+	at org.eclipse.pde.internal.core.PluginModelManager.getWorkspaceModels(PluginModelManager.java:1188)
+	at org.eclipse.pde.core.plugin.PluginRegistry.getWorkspaceModels(PluginRegistry.java:212)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.getModels(PDEExtensionRegistry.java:74)
+	at org.eclipse.pde.internal.core.PDERegistryStrategy.processBundles(PDERegistryStrategy.java:194)
+	at org.eclipse.pde.internal.core.PDERegistryStrategy.onStart(PDERegistryStrategy.java:174)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.<init>(ExtensionRegistry.java:740)
+	at org.eclipse.core.runtime.RegistryFactory.createRegistry(RegistryFactory.java:61)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.createRegistry(PDEExtensionRegistry.java:102)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.getRegistry(PDEExtensionRegistry.java:93)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.getExtensionPoint(PDEExtensionRegistry.java:153)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.findExtensionPoint(PDEExtensionRegistry.java:170)
+	at com.yattasolutions.obf.pa.as.aGc(SourceFile:53)
+	at com.yattasolutions.obf.pa.as.hn(SourceFile:61)
+	at com.yattasolutions.obf.mh.d.readRegistry(SourceFile:139)
+	at com.yattasolutions.obf.mh.d.initialize(SourceFile:75)
+	at com.yattasolutions.obf.mh.d.auW(SourceFile:55)
+	at com.yattasolutions.obf.pa.ab$1.<init>(SourceFile:180)
+	at com.yattasolutions.obf.pa.ab.getInternalURIMap(SourceFile:177)
+	at org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl.getURIMap(ExtensibleURIConverterImpl.java:454)
+	at org.eclipse.uml2.uml.util.UMLUtil.init(UMLUtil.java:13555)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at com.yattasolutions.obf.pa.m$i.a(SourceFile:243)
+	at com.yattasolutions.obf.pa.m$i.u(SourceFile:215)
+	at com.yattasolutions.obf.pa.m.r(SourceFile:1119)
+	at com.yattasolutions.obf.nu.m.createEditingDomain(SourceFile:105)
+	at com.yattasolutions.obf.nu.m.createEditingDomain(SourceFile:91)
+	at org.eclipse.emf.workspace.WorkspaceEditingDomainFactory.createEditingDomain(WorkspaceEditingDomainFactory.java:78)
+	at org.eclipse.emf.transaction.impl.EditingDomainManager.createEditingDomain(EditingDomainManager.java:105)
+	at org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl$RegistryImpl.getEditingDomain(TransactionalEditingDomainImpl.java:1238)
+	at com.yattasolutions.obf.nu.k$a.<clinit>(SourceFile:388)
+	at com.yattasolutions.obf.nu.k.aCc(SourceFile:405)
+	at com.yattasolutions.obf.ot.h.<init>(SourceFile:47)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:204)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:920)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:246)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:63)
+	at org.eclipse.ui.internal.navigator.extensions.NavigatorContentDescriptor.createContentProvider(NavigatorContentDescriptor.java:367)
+	at org.eclipse.ui.internal.navigator.extensions.NavigatorContentExtension$1.run(NavigatorContentExtension.java:114)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.navigator.extensions.NavigatorContentExtension.internalGetContentProvider(NavigatorContentExtension.java:109)
+	at org.eclipse.ui.internal.navigator.NavigatorContentService.extractContentProviders(NavigatorContentService.java:1110)
+	at org.eclipse.ui.internal.navigator.NavigatorContentService.updateService(NavigatorContentService.java:360)
+	at org.eclipse.ui.internal.navigator.NavigatorContentServiceContentProvider.inputChanged(NavigatorContentServiceContentProvider.java:113)
+	at org.eclipse.jface.viewers.ContentViewer.setInput(ContentViewer.java:278)
+	at org.eclipse.jface.viewers.StructuredViewer.setInput(StructuredViewer.java:1632)
+	at org.eclipse.ui.navigator.CommonNavigator.createPartControl(CommonNavigator.java:205)
+	at com.yattasolutions.obf.ot.g.createPartControl(SourceFile:284)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.createPartControl(CompatibilityPart.java:158)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityView.createPartControl(CompatibilityView.java:155)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:365)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:995)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:960)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:403)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:330)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:202)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:91)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:132)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:995)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:528)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ElementReferenceRenderer.createWidget(ElementReferenceRenderer.java:73)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:995)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.lambda$0(PartServiceImpl.java:110)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.lambda$0(UIEventHandler.java:38)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:236)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4779)
+	at org.eclipse.e4.ui.workbench.swt.DisplayUISynchronize.syncExec(DisplayUISynchronize.java:34)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:38)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:133)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElementGen(ElementContainerImpl.java:170)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElement(ElementContainerImpl.java:188)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:121)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:677)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:82)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.lambda$0(LazyStackRenderer.java:83)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.lambda$0(UIEventHandler.java:38)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:236)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4779)
+	at org.eclipse.e4.ui.workbench.swt.DisplayUISynchronize.syncExec(DisplayUISynchronize.java:34)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:38)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:133)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.advanced.impl.PerspectiveStackImpl.setSelectedElement(PerspectiveStackImpl.java:152)
+	at org.eclipse.e4.ui.model.application.ui.advanced.impl.PerspectiveStackImpl.setSelectedElement(PerspectiveStackImpl.java:1)
+	at org.eclipse.ui.internal.WorkbenchPage.busySetPerspective(WorkbenchPage.java:4014)
+	at org.eclipse.ui.internal.WorkbenchPage.lambda$10(WorkbenchPage.java:3951)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.internal.WorkbenchPage.setPerspective(WorkbenchPage.java:3951)
+	at org.eclipse.ui.internal.WorkbenchWindow.setup(WorkbenchWindow.java:898)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:995)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.inject(InjectorImpl.java:96)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.inject(ContextInjectionFactory.java:83)
+	at org.eclipse.ui.internal.Workbench.createWorkbenchWindow(Workbench.java:1469)
+	at org.eclipse.ui.internal.StandardTrim.createStatusLine(StandardTrim.java:118)
+	at org.eclipse.ui.internal.StandardTrim.createWidget(StandardTrim.java:48)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:995)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:403)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:344)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:227)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:94)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ToolControlRenderer.createWidget(ToolControlRenderer.java:129)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:995)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.TrimBarRenderer.processContents(TrimBarRenderer.java:109)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:528)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:680)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1083)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+Caused by: java.net.MalformedURLException: no protocol: ../../../.p2/pool/
+	at java.base/java.net.URL.<init>(URL.java:672)
+	at java.base/java.net.URL.<init>(URL.java:568)
+	at org.eclipse.pde.internal.core.update.configurator.ConfigurationParser.processSite(ConfigurationParser.java:157)
+	at org.eclipse.pde.internal.core.update.configurator.ConfigurationParser.startElement(ConfigurationParser.java:120)
+	... 248 more
+
+!ENTRY org.eclipse.pde.core 4 0 2022-11-18 19:07:08.410
+!MESSAGE ConfigurationParser.parse() error:
+!STACK 0
+org.xml.sax.SAXException: NLS missing message: InstalledSiteParser_UnableToCreateURL in: org.eclipse.update.internal.configurator.messages
+java.net.MalformedURLException: no protocol: ../../../.p2/pool/
+	at org.eclipse.pde.internal.core.update.configurator.ConfigurationParser.startElement(ConfigurationParser.java:130)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:518)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:374)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2725)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:541)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:888)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:824)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:635)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:324)
+	at org.eclipse.pde.internal.core.update.configurator.ConfigurationParser.parse(ConfigurationParser.java:85)
+	at org.eclipse.pde.internal.core.update.configurator.PlatformConfiguration.loadConfig(PlatformConfiguration.java:135)
+	at org.eclipse.pde.internal.core.update.configurator.PlatformConfiguration.initialize(PlatformConfiguration.java:85)
+	at org.eclipse.pde.internal.core.update.configurator.PlatformConfiguration.<init>(PlatformConfiguration.java:61)
+	at org.eclipse.pde.internal.core.PluginPathFinder.getFeaturePaths(PluginPathFinder.java:115)
+	at org.eclipse.pde.internal.core.ExternalFeatureModelManager.createFeatures(ExternalFeatureModelManager.java:198)
+	at org.eclipse.pde.internal.core.target.TargetDefinition.resolveFeatures(TargetDefinition.java:1060)
+	at org.eclipse.pde.internal.core.target.ProfileBundleContainer.resolveFeatures(ProfileBundleContainer.java:249)
+	at org.eclipse.pde.internal.core.target.AbstractBundleContainer.resolve(AbstractBundleContainer.java:97)
+	at org.eclipse.pde.internal.core.target.TargetDefinition.resolve(TargetDefinition.java:424)
+	at org.eclipse.pde.internal.core.TargetPlatformHelper.getWorkspaceTargetResolved(TargetPlatformHelper.java:630)
+	at org.eclipse.pde.internal.core.PluginModelManager.getExternalBundles(PluginModelManager.java:668)
+	at org.eclipse.pde.internal.core.PluginModelManager.initializeTable(PluginModelManager.java:591)
+	at org.eclipse.pde.internal.core.PluginModelManager.getWorkspaceModels(PluginModelManager.java:1188)
+	at org.eclipse.pde.core.plugin.PluginRegistry.getWorkspaceModels(PluginRegistry.java:212)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.getModels(PDEExtensionRegistry.java:74)
+	at org.eclipse.pde.internal.core.PDERegistryStrategy.processBundles(PDERegistryStrategy.java:194)
+	at org.eclipse.pde.internal.core.PDERegistryStrategy.onStart(PDERegistryStrategy.java:174)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.<init>(ExtensionRegistry.java:740)
+	at org.eclipse.core.runtime.RegistryFactory.createRegistry(RegistryFactory.java:61)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.createRegistry(PDEExtensionRegistry.java:102)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.getRegistry(PDEExtensionRegistry.java:93)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.getExtensionPoint(PDEExtensionRegistry.java:153)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.findExtensionPoint(PDEExtensionRegistry.java:170)
+	at com.yattasolutions.obf.pa.as.aGc(SourceFile:53)
+	at com.yattasolutions.obf.pa.as.hn(SourceFile:61)
+	at com.yattasolutions.obf.mh.d.readRegistry(SourceFile:139)
+	at com.yattasolutions.obf.mh.d.initialize(SourceFile:75)
+	at com.yattasolutions.obf.mh.d.auW(SourceFile:55)
+	at com.yattasolutions.obf.pa.ab$1.<init>(SourceFile:180)
+	at com.yattasolutions.obf.pa.ab.getInternalURIMap(SourceFile:177)
+	at org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl.getURIMap(ExtensibleURIConverterImpl.java:454)
+	at org.eclipse.uml2.uml.util.UMLUtil.init(UMLUtil.java:13555)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at com.yattasolutions.obf.pa.m$i.a(SourceFile:243)
+	at com.yattasolutions.obf.pa.m$i.u(SourceFile:215)
+	at com.yattasolutions.obf.pa.m.r(SourceFile:1119)
+	at com.yattasolutions.obf.nu.m.createEditingDomain(SourceFile:105)
+	at com.yattasolutions.obf.nu.m.createEditingDomain(SourceFile:91)
+	at org.eclipse.emf.workspace.WorkspaceEditingDomainFactory.createEditingDomain(WorkspaceEditingDomainFactory.java:78)
+	at org.eclipse.emf.transaction.impl.EditingDomainManager.createEditingDomain(EditingDomainManager.java:105)
+	at org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl$RegistryImpl.getEditingDomain(TransactionalEditingDomainImpl.java:1238)
+	at com.yattasolutions.obf.nu.k$a.<clinit>(SourceFile:388)
+	at com.yattasolutions.obf.nu.k.aCc(SourceFile:405)
+	at com.yattasolutions.obf.ot.h.<init>(SourceFile:47)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:204)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:920)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:246)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:63)
+	at org.eclipse.ui.internal.navigator.extensions.NavigatorContentDescriptor.createContentProvider(NavigatorContentDescriptor.java:367)
+	at org.eclipse.ui.internal.navigator.extensions.NavigatorContentExtension$1.run(NavigatorContentExtension.java:114)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.navigator.extensions.NavigatorContentExtension.internalGetContentProvider(NavigatorContentExtension.java:109)
+	at org.eclipse.ui.internal.navigator.NavigatorContentService.extractContentProviders(NavigatorContentService.java:1110)
+	at org.eclipse.ui.internal.navigator.NavigatorContentService.updateService(NavigatorContentService.java:360)
+	at org.eclipse.ui.internal.navigator.NavigatorContentServiceContentProvider.inputChanged(NavigatorContentServiceContentProvider.java:113)
+	at org.eclipse.jface.viewers.ContentViewer.setInput(ContentViewer.java:278)
+	at org.eclipse.jface.viewers.StructuredViewer.setInput(StructuredViewer.java:1632)
+	at org.eclipse.ui.navigator.CommonNavigator.createPartControl(CommonNavigator.java:205)
+	at com.yattasolutions.obf.ot.g.createPartControl(SourceFile:284)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.createPartControl(CompatibilityPart.java:158)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityView.createPartControl(CompatibilityView.java:155)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:365)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:995)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:960)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:403)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:330)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:202)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:91)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:132)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:995)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:528)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ElementReferenceRenderer.createWidget(ElementReferenceRenderer.java:73)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:995)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.lambda$0(PartServiceImpl.java:110)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.lambda$0(UIEventHandler.java:38)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:236)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4779)
+	at org.eclipse.e4.ui.workbench.swt.DisplayUISynchronize.syncExec(DisplayUISynchronize.java:34)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:38)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:133)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElementGen(ElementContainerImpl.java:170)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElement(ElementContainerImpl.java:188)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:121)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:677)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:82)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.lambda$0(LazyStackRenderer.java:83)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.lambda$0(UIEventHandler.java:38)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:236)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4779)
+	at org.eclipse.e4.ui.workbench.swt.DisplayUISynchronize.syncExec(DisplayUISynchronize.java:34)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:38)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:133)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.advanced.impl.PerspectiveStackImpl.setSelectedElement(PerspectiveStackImpl.java:152)
+	at org.eclipse.e4.ui.model.application.ui.advanced.impl.PerspectiveStackImpl.setSelectedElement(PerspectiveStackImpl.java:1)
+	at org.eclipse.ui.internal.WorkbenchPage.busySetPerspective(WorkbenchPage.java:4014)
+	at org.eclipse.ui.internal.WorkbenchPage.lambda$10(WorkbenchPage.java:3951)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.internal.WorkbenchPage.setPerspective(WorkbenchPage.java:3951)
+	at org.eclipse.ui.internal.WorkbenchWindow.setup(WorkbenchWindow.java:898)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:995)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.inject(InjectorImpl.java:96)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.inject(ContextInjectionFactory.java:83)
+	at org.eclipse.ui.internal.Workbench.createWorkbenchWindow(Workbench.java:1469)
+	at org.eclipse.ui.internal.StandardTrim.createStatusLine(StandardTrim.java:118)
+	at org.eclipse.ui.internal.StandardTrim.createWidget(StandardTrim.java:48)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:995)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:403)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:344)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:227)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:94)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ToolControlRenderer.createWidget(ToolControlRenderer.java:129)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:995)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.TrimBarRenderer.processContents(TrimBarRenderer.java:109)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:528)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:680)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1083)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+Caused by: java.net.MalformedURLException: no protocol: ../../../.p2/pool/
+	at java.base/java.net.URL.<init>(URL.java:672)
+	at java.base/java.net.URL.<init>(URL.java:568)
+	at org.eclipse.pde.internal.core.update.configurator.ConfigurationParser.processSite(ConfigurationParser.java:157)
+	at org.eclipse.pde.internal.core.update.configurator.ConfigurationParser.startElement(ConfigurationParser.java:120)
+	... 248 more
+
+!ENTRY org.eclipse.pde.core 4 0 2022-11-18 19:07:08.417
+!MESSAGE NLS missing message: InstalledSiteParser_UnableToCreateURL in: org.eclipse.update.internal.configurator.messages
+!STACK 0
+org.xml.sax.SAXException: NLS missing message: InstalledSiteParser_UnableToCreateURL in: org.eclipse.update.internal.configurator.messages
+java.net.MalformedURLException: no protocol: ../../../.p2/pool/
+	at org.eclipse.pde.internal.core.update.configurator.ConfigurationParser.startElement(ConfigurationParser.java:130)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:518)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:374)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2725)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:541)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:888)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:824)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:635)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:324)
+	at org.eclipse.pde.internal.core.update.configurator.ConfigurationParser.parse(ConfigurationParser.java:85)
+	at org.eclipse.pde.internal.core.update.configurator.PlatformConfiguration.loadConfig(PlatformConfiguration.java:135)
+	at org.eclipse.pde.internal.core.update.configurator.PlatformConfiguration.initialize(PlatformConfiguration.java:85)
+	at org.eclipse.pde.internal.core.update.configurator.PlatformConfiguration.<init>(PlatformConfiguration.java:61)
+	at org.eclipse.pde.internal.core.PluginPathFinder.getFeaturePaths(PluginPathFinder.java:115)
+	at org.eclipse.pde.internal.core.ExternalFeatureModelManager.createFeatures(ExternalFeatureModelManager.java:198)
+	at org.eclipse.pde.internal.core.target.TargetDefinition.resolveFeatures(TargetDefinition.java:1060)
+	at org.eclipse.pde.internal.core.target.ProfileBundleContainer.resolveFeatures(ProfileBundleContainer.java:249)
+	at org.eclipse.pde.internal.core.target.AbstractBundleContainer.resolve(AbstractBundleContainer.java:97)
+	at org.eclipse.pde.internal.core.target.TargetDefinition.resolve(TargetDefinition.java:424)
+	at org.eclipse.pde.internal.core.TargetPlatformHelper.getWorkspaceTargetResolved(TargetPlatformHelper.java:630)
+	at org.eclipse.pde.internal.core.PluginModelManager.getExternalBundles(PluginModelManager.java:668)
+	at org.eclipse.pde.internal.core.PluginModelManager.initializeTable(PluginModelManager.java:591)
+	at org.eclipse.pde.internal.core.PluginModelManager.getWorkspaceModels(PluginModelManager.java:1188)
+	at org.eclipse.pde.core.plugin.PluginRegistry.getWorkspaceModels(PluginRegistry.java:212)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.getModels(PDEExtensionRegistry.java:74)
+	at org.eclipse.pde.internal.core.PDERegistryStrategy.processBundles(PDERegistryStrategy.java:194)
+	at org.eclipse.pde.internal.core.PDERegistryStrategy.onStart(PDERegistryStrategy.java:174)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.<init>(ExtensionRegistry.java:740)
+	at org.eclipse.core.runtime.RegistryFactory.createRegistry(RegistryFactory.java:61)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.createRegistry(PDEExtensionRegistry.java:102)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.getRegistry(PDEExtensionRegistry.java:93)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.getExtensionPoint(PDEExtensionRegistry.java:153)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.findExtensionPoint(PDEExtensionRegistry.java:170)
+	at com.yattasolutions.obf.pa.as.aGc(SourceFile:53)
+	at com.yattasolutions.obf.pa.as.hn(SourceFile:61)
+	at com.yattasolutions.obf.mh.d.readRegistry(SourceFile:139)
+	at com.yattasolutions.obf.mh.d.initialize(SourceFile:75)
+	at com.yattasolutions.obf.mh.d.auW(SourceFile:55)
+	at com.yattasolutions.obf.pa.ab$1.<init>(SourceFile:180)
+	at com.yattasolutions.obf.pa.ab.getInternalURIMap(SourceFile:177)
+	at org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl.getURIMap(ExtensibleURIConverterImpl.java:454)
+	at org.eclipse.uml2.uml.util.UMLUtil.init(UMLUtil.java:13555)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at com.yattasolutions.obf.pa.m$i.a(SourceFile:243)
+	at com.yattasolutions.obf.pa.m$i.u(SourceFile:215)
+	at com.yattasolutions.obf.pa.m.r(SourceFile:1119)
+	at com.yattasolutions.obf.nu.m.createEditingDomain(SourceFile:105)
+	at com.yattasolutions.obf.nu.m.createEditingDomain(SourceFile:91)
+	at org.eclipse.emf.workspace.WorkspaceEditingDomainFactory.createEditingDomain(WorkspaceEditingDomainFactory.java:78)
+	at org.eclipse.emf.transaction.impl.EditingDomainManager.createEditingDomain(EditingDomainManager.java:105)
+	at org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl$RegistryImpl.getEditingDomain(TransactionalEditingDomainImpl.java:1238)
+	at com.yattasolutions.obf.nu.k$a.<clinit>(SourceFile:388)
+	at com.yattasolutions.obf.nu.k.aCc(SourceFile:405)
+	at com.yattasolutions.obf.ot.h.<init>(SourceFile:47)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:204)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:920)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:246)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:63)
+	at org.eclipse.ui.internal.navigator.extensions.NavigatorContentDescriptor.createContentProvider(NavigatorContentDescriptor.java:367)
+	at org.eclipse.ui.internal.navigator.extensions.NavigatorContentExtension$1.run(NavigatorContentExtension.java:114)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.navigator.extensions.NavigatorContentExtension.internalGetContentProvider(NavigatorContentExtension.java:109)
+	at org.eclipse.ui.internal.navigator.NavigatorContentService.extractContentProviders(NavigatorContentService.java:1110)
+	at org.eclipse.ui.internal.navigator.NavigatorContentService.updateService(NavigatorContentService.java:360)
+	at org.eclipse.ui.internal.navigator.NavigatorContentServiceContentProvider.inputChanged(NavigatorContentServiceContentProvider.java:113)
+	at org.eclipse.jface.viewers.ContentViewer.setInput(ContentViewer.java:278)
+	at org.eclipse.jface.viewers.StructuredViewer.setInput(StructuredViewer.java:1632)
+	at org.eclipse.ui.navigator.CommonNavigator.createPartControl(CommonNavigator.java:205)
+	at com.yattasolutions.obf.ot.g.createPartControl(SourceFile:284)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.createPartControl(CompatibilityPart.java:158)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityView.createPartControl(CompatibilityView.java:155)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:365)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:995)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:960)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:403)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:330)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:202)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:91)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:132)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:995)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:528)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ElementReferenceRenderer.createWidget(ElementReferenceRenderer.java:73)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:995)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.lambda$0(PartServiceImpl.java:110)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.lambda$0(UIEventHandler.java:38)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:236)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4779)
+	at org.eclipse.e4.ui.workbench.swt.DisplayUISynchronize.syncExec(DisplayUISynchronize.java:34)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:38)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:133)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElementGen(ElementContainerImpl.java:170)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElement(ElementContainerImpl.java:188)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:121)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:677)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:82)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.lambda$0(LazyStackRenderer.java:83)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.lambda$0(UIEventHandler.java:38)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:236)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4779)
+	at org.eclipse.e4.ui.workbench.swt.DisplayUISynchronize.syncExec(DisplayUISynchronize.java:34)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:38)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:133)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.advanced.impl.PerspectiveStackImpl.setSelectedElement(PerspectiveStackImpl.java:152)
+	at org.eclipse.e4.ui.model.application.ui.advanced.impl.PerspectiveStackImpl.setSelectedElement(PerspectiveStackImpl.java:1)
+	at org.eclipse.ui.internal.WorkbenchPage.busySetPerspective(WorkbenchPage.java:4014)
+	at org.eclipse.ui.internal.WorkbenchPage.lambda$10(WorkbenchPage.java:3951)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.internal.WorkbenchPage.setPerspective(WorkbenchPage.java:3951)
+	at org.eclipse.ui.internal.WorkbenchWindow.setup(WorkbenchWindow.java:898)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:995)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.inject(InjectorImpl.java:96)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.inject(ContextInjectionFactory.java:83)
+	at org.eclipse.ui.internal.Workbench.createWorkbenchWindow(Workbench.java:1469)
+	at org.eclipse.ui.internal.StandardTrim.createStatusLine(StandardTrim.java:118)
+	at org.eclipse.ui.internal.StandardTrim.createWidget(StandardTrim.java:48)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:995)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:403)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:344)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:227)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:94)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ToolControlRenderer.createWidget(ToolControlRenderer.java:129)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:995)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.TrimBarRenderer.processContents(TrimBarRenderer.java:109)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:528)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:680)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1083)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+Caused by: java.net.MalformedURLException: no protocol: ../../../.p2/pool/
+	at java.base/java.net.URL.<init>(URL.java:672)
+	at java.base/java.net.URL.<init>(URL.java:568)
+	at org.eclipse.pde.internal.core.update.configurator.ConfigurationParser.processSite(ConfigurationParser.java:157)
+	at org.eclipse.pde.internal.core.update.configurator.ConfigurationParser.startElement(ConfigurationParser.java:120)
+	... 248 more
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-11-18 19:07:29.632
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-11-18 19:07:29.634
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-11-18 19:07:30.192
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Sergio'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui 2 2 2022-11-18 19:12:33.457
+!MESSAGE Invalid property category path: org.eclipse.rcptt.ui.views.IntegrationsPropertiesPage (bundle: org.eclipse.rcptt.zephyr.ui, propertyPage: org.eclipse.rcptt.zephyr.ZephyrPropertiesPage)
+
+!ENTRY org.eclipse.core.jobs 4 2 2022-11-18 19:12:38.814
+!MESSAGE An internal error occurred during: "Check server availability".
+!STACK 0
+java.lang.RuntimeException: The plugin could not be started. Please restart Eclipse.
+	at com.yattasolutions.platform.marketplace.client.MarketplaceClientPlugin.getDefault(MarketplaceClientPlugin.java:245)
+	at com.yattasolutions.platform.marketplace.client.account.CheckServerAvailabilityJob.run(CheckServerAvailabilityJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
